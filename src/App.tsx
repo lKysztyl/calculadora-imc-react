@@ -24,5 +24,5 @@ interface ItypeProps {
     ) 
   }
 
-  export {App }
+  export default App 
   export type {ItypeProps, ItypePropsSet}
