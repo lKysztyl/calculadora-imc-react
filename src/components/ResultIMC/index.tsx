@@ -2,9 +2,15 @@ import { ItypeProps } from "../../App";
 
 
 function ResultIMC({propsWeight, propsHeight}: ItypeProps) {
-    const IMC = () => {
-        const imc = propsWeight / (propsHeight * propsHeight)
-        return imc
+
+    const IMC = (): number => {
+        const imc: number = propsWeight / (propsHeight * propsHeight);
+
+        const stringIMC: string = imc.toFixed(2);
+        const numberIMC: number = parseFloat(stringIMC);
+
+        return numberIMC;
+        
     };
 
     return (
