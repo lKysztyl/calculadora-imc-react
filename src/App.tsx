@@ -1,7 +1,7 @@
 import { useState} from 'react';
 import Forms from './components/Forms';
 import ResultIMC from './components/ResultIMC';
-import TableIMC from './components/TableIMC';
+
 
 interface ItypePropsSet {
   setWeight: React.Dispatch<React.SetStateAction<number>>;
@@ -22,7 +22,6 @@ interface ItypeProps {
       <h1 className="text-center py-8 text-blue-700 text-3xl">Calculadora de IMC</h1>
       <Forms setWeight={setWeight} setHeight={setHeight} />
       <ResultIMC weight={weight} height={height} />
-      <TableIMC/>
       </div>
     ) 
   }
