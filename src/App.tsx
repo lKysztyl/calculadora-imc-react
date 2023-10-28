@@ -4,24 +4,24 @@ import ResultIMC from './components/ResultIMC';
 import TableIMC from './components/TableIMC';
 
 interface ItypePropsSet {
-  setPropsWeight: React.Dispatch<React.SetStateAction<number>>;
-  setPropsHeight: React.Dispatch<React.SetStateAction<number>>;
+  setWeight: React.Dispatch<React.SetStateAction<number>>;
+  setHeight: React.Dispatch<React.SetStateAction<number>>;
 }
 
 interface ItypeProps {
-  propsWeight: number;
-  propsHeight: number;
+  weight: number;
+  height: number;
 }
 
   function App() {
-    const [propsWeight, setPropsWeight] = useState<number>(0)
-    const [propsHeight, setPropsHeight] = useState<number>(0)
+    const [weight, setWeight] = useState<number>(0)
+    const [height, setHeight] = useState<number>(0)
 
     return (
       <div className='container bg-gray-400 w-screen h-screen m-auto px-52'>
       <h1 className="text-center py-8 text-blue-700 text-3xl">Calculadora de IMC</h1>
-      <Forms setPropsWeight={setPropsWeight} setPropsHeight={setPropsHeight} />
-      <ResultIMC propsWeight={propsWeight} propsHeight={propsHeight} />
+      <Forms setWeight={setWeight} setHeight={setHeight} />
+      <ResultIMC weight={weight} height={height} />
       <TableIMC/>
       </div>
     ) 

@@ -1,10 +1,10 @@
 import { ItypeProps } from "../../App";
 
 
-function ResultIMC({propsWeight, propsHeight}: ItypeProps) {
+function ResultIMC({weight, height}: ItypeProps) {
 
     const IMC = (): number => {
-        const imc: number = propsWeight / (propsHeight * propsHeight);
+        const imc: number = weight / (height * height);
 
         const stringIMC: string = imc.toFixed(2);
         const numberIMC: number = parseFloat(stringIMC);
