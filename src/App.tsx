@@ -18,8 +18,8 @@ interface ItypeProps {
     const [height, setHeight] = useState<number>(0)
 
     return (
-      <div className='container font-roboto-mono  w-screen h-screen m-auto px-52'>
-      <h1 className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 bg-clip-text text-transparent text-center py-12 text-blue-700 text-5xl">Calculadora de IMC</h1>
+      <div className='container font-roboto-mono m-auto px-52 max-lg:px-0'>
+      <h1 className="bg-gradient-to-r from-blue-100 via-blue-300 to-blue-500 bg-clip-text text-transparent text-center py-12 text-blue-700 text-5xl max-lg:text-3xl">Calculadora de IMC</h1>
       <Forms setWeight={setWeight} setHeight={setHeight} />
       <ResultIMC weight={weight} height={height} />
       </div>

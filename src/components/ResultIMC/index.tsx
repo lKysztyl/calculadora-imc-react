@@ -35,7 +35,7 @@ function ResultIMC({weight, height}: ItypeProps) {
     let overWeightTrue: boolean | number = false;
     let obesityTrue: boolean | number = false;
 
-    console.log('Calculo')
+
 
     if (calculoIMC <= underWeight) {
         underWeightTrue = true;
@@ -62,7 +62,7 @@ function ResultIMC({weight, height}: ItypeProps) {
                 <input id="resultIMC" className='block m-auto text-center rounded-md p-1 ml-2 mr-0' type="number" value={calculoIMC} readOnly />
             </div>
 
-            <div className="grid grid-cols-4 text-center">
+            <div className="grid grid-cols-4 text-center max-lg:grid-cols-2">
                 <div className={`${underWeightTrue ? a : b}`}>
                     <h4>Abaixo do Peso</h4>
                     <p>&lt; 18.5</p>
