@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'radial-gradient': 'radial-gradient(ellipse at top left, var(--tw-gradient-stops))',
+        'dark-radial-gradient': 'radial-gradient(ellipse at top left, var(--tw-gradient-stops))',
+        'lightblue-radial-gradient': 'radial-gradient(ellipse at bottom, var(--tw-gradient-stops))',
       },
     },
   },
