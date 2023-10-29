@@ -18,7 +18,7 @@ function ResultIMC({weight, height}: ItypeProps) {
     const calculoIMC =  IMC();
     const underWeight: number = 18.49;
     const idealWeight: number = 24.49;
-    const overWeight: number = 30;
+    const overWeight: number = 25;
     const obesity: number = 30.01;
     const a:string = 'dark-gradient';
     const b:string = 'lightblue-gradient';
@@ -37,16 +37,18 @@ function ResultIMC({weight, height}: ItypeProps) {
 
     console.log('Calculo')
 
-    if (calculoIMC < underWeight) {
+    if (calculoIMC <= underWeight) {
         underWeightTrue = true;
     }
 
     if (calculoIMC > underWeight && calculoIMC < overWeight) {
         idealWeightTrue = true;
+        console.log(idealWeightTrue, overWeightTrue, idealWeight, overWeight, calculoIMC)
     }
 
-    if (calculoIMC < overWeight && calculoIMC >= obesity) {
+    if (calculoIMC > idealWeight && calculoIMC < obesity) {
         overWeightTrue = true;
+        console.log(idealWeightTrue, overWeightTrue)
     }
 
     if (calculoIMC >= obesity) {
@@ -61,7 +63,7 @@ function ResultIMC({weight, height}: ItypeProps) {
             </div>
 
             <div className="grid grid-cols-4 text-center">
-                <div className={`${underWeightTrue ? b : b}`}>
+                <div className={`${underWeightTrue ? a : b}`}>
                     <h4>Abaixo do Peso</h4>
                     <p>&lt; 18.5</p>
                 </div>
@@ -69,11 +71,11 @@ function ResultIMC({weight, height}: ItypeProps) {
                     <h4>Peso Ideal</h4>
                     <p>18.5 a 24.9</p>
                 </div>
-                <div className={`${overWeightTrue ? b : horizonGradient}`}>
+                <div className={`${overWeightTrue ? a : horizonGradient}`}>
                     <h4>Sobrepeso</h4>
                     <p>25 a 30</p>
                 </div>
-                <div className={`${obesityTrue ? b : morningGradient}`}>
+                <div className={`${obesityTrue ? a : morningGradient}`}>
                     <h4>Obesidade</h4>
                     <p>30 &gt;</p>
                 </div>
