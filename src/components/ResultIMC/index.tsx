@@ -12,6 +12,8 @@ function ResultIMC({weight, height}: ItypeProps) {
 
         if (numberIMC > 0 && numberIMC !==Infinity) {
             return numberIMC;
+        }else {
+            return 0;
         }
     };
     
