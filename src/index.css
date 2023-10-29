@@ -11,12 +11,24 @@ input[type=number]::-webkit-inner-spin-button {
     @apply bg-dark-radial-gradient
     from-gray-700
     via-gray-900 
-    to-black text-white;
+    to-black text-white p-4 border-4 border-white;
 }
 
 .lightblue-gradient {
     @apply bg-lightblue-radial-gradient
     from-sky-400
-    to-sky-200 text-white;
+    to-sky-200
+    text-white p-4;
 }
 
+.sea-gradient {
+    @apply bg-sea-gradient from-cyan-200 to-cyan-400 p-4 text-white;
+}
+
+.horizon-gradient {
+    @apply bg-gradient-to-r from-orange-200 to-orange-300 p-4 text-white
+}
+
+.morning-gradient {
+    @apply bg-gradient-to-r from-orange-300 to-rose-400 p-4 text-white
+}
