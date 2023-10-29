@@ -25,7 +25,7 @@ function ResultIMC({weight, height}: ItypeProps) {
 
     const falseArray: boolean[] = [false, false, false, false];
 
-    if (calculoIMC <= tableIcmArray[0]) {
+    if (calculoIMC <= tableIcmArray[0] && calculoIMC > 0) {
         falseArray[0] = true;
     }
 
