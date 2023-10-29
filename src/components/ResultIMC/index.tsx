@@ -16,44 +16,33 @@ function ResultIMC({weight, height}: ItypeProps) {
     };
     
     const calculoIMC =  IMC();
-    const underWeight: number = 18.49;
-    const idealWeight: number = 24.49;
-    const overWeight: number = 25;
-    const obesity: number = 30.01;
-    const a:string = 'dark-gradient';
-    const b:string = 'lightblue-gradient';
-    const seaGradient: string = 'sea-gradient';
-    const horizonGradient: string = 'horizon-gradient';
-    const morningGradient: string = 'morning-gradient';
+
+    const tableIcmArray: number[] = [18.49, 24.49, 25, 30.01];
+
+    const gradientArray: string[] = ['sea-gradient', 'dark-gradient', 'horizon-gradient', 'morning-gradient', 'lightblue-gradient']
+
+    const falseArray: boolean[] = [false, false, false, false];
+
+    if (calculoIMC <= tableIcmArray[0]) {
+        falseArray[0] = true;
+    }
+
+    if (calculoIMC > tableIcmArray[0] && calculoIMC < tableIcmArray[2]) {
+        falseArray[1] = true;
+    }
+
+    if (calculoIMC > tableIcmArray[1] && calculoIMC < tableIcmArray[3]) {
+        falseArray[2] = true;
+    }
+
+    if (calculoIMC >= tableIcmArray[3]) {
+        falseArray[3] = true;
+    }
+
 
     useEffect(() => {
         calculoIMC
     }, [calculoIMC]);
-
-    let underWeightTrue: boolean | number = false;
-    let idealWeightTrue: boolean | number = false;
-    let overWeightTrue: boolean | number = false;
-    let obesityTrue: boolean | number = false;
-
-
-
-    if (calculoIMC <= underWeight) {
-        underWeightTrue = true;
-    }
-
-    if (calculoIMC > underWeight && calculoIMC < overWeight) {
-        idealWeightTrue = true;
-        console.log(idealWeightTrue, overWeightTrue, idealWeight, overWeight, calculoIMC)
-    }
-
-    if (calculoIMC > idealWeight && calculoIMC < obesity) {
-        overWeightTrue = true;
-        console.log(idealWeightTrue, overWeightTrue)
-    }
-
-    if (calculoIMC >= obesity) {
-        obesityTrue = true;
-    }
 
     return (
         <>
@@ -63,19 +52,19 @@ function ResultIMC({weight, height}: ItypeProps) {
             </div>
 
             <div className="grid grid-cols-4 text-center max-lg:grid-cols-2">
-                <div className={`${underWeightTrue ? a : b}`}>
+                <div className={`${falseArray[0] ? gradientArray[1] : gradientArray[4]}`}>
                     <h4>Abaixo do Peso</h4>
                     <p>&lt; 18.5</p>
                 </div>
-                <div className={`${idealWeightTrue ? a : seaGradient}`}>
+                <div className={`${falseArray[1] ? gradientArray[1] : gradientArray[0]}`}>
                     <h4>Peso Ideal</h4>
                     <p>18.5 a 24.9</p>
                 </div>
-                <div className={`${overWeightTrue ? a : horizonGradient}`}>
+                <div className={`${falseArray[2] ? gradientArray[1] : gradientArray[2]}`}>
                     <h4>Sobrepeso</h4>
                     <p>25 a 30</p>
                 </div>
-                <div className={`${obesityTrue ? a : morningGradient}`}>
+                <div className={`${falseArray[3] ? gradientArray[1] : gradientArray[3]}`}>
                     <h4>Obesidade</h4>
                     <p>30 &gt;</p>
                 </div>
